@@ -22,6 +22,7 @@ python manage.py runserver
 ```
 
 ## Usage
+### Command-Line
 ```bash
 # Users can be added by the administrator only
 # Authentication is Basic i.e. username and password.
