@@ -34,6 +34,15 @@ $ curl -X GET http://127.0.0.1:8000/movies/\?search\=pre -u usera:thisthisthis
 $ curl -X POST http://127.0.0.1:8000/movies/ -u usera:thisthisthis -d 'title=Maleficent&date=2014-05-30'
 # {"id":5,"title":"Maleficent","date":"2014-05-30"}
 
+# To sort the list of movies (owned by the user) by date
+$ curl -X GET http://127.0.0.1:8000/movies/\?sort\=date -u usera:thisthisthis
+# [{"id":6,"title":"Titanic","date":"1997-11-18"},{"id":5,"title":"Maleficent","date":"2014-05-30"},{"id":2,"title":"Parasite","date":"2020-01-31"}] 
+
+# To sort the list of movies (owned by the user) by title
+$ curl -X GET http://127.0.0.1:8000/movies/\?sort\=title -u usera:thisthisthis
+# [{"id":5,"title":"Maleficent","date":"2014-05-30"},{"id":2,"title":"Parasite","date":"2020-01-31"},{"id":6,"title":"Titanic","date":"1997-11-18"}]
+
+
 # To get list of users
 $ curl -X GET http://127.0.0.1:8000/users/ -u usera:thisthisthis
 ```
