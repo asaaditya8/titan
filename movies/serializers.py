@@ -11,7 +11,7 @@ class MoviesSerializer(serializers.ModelSerializer):
 
 
 class UserSerializer(serializers.ModelSerializer):
-    snippets = serializers.PrimaryKeyRelatedField(many=True, queryset=Movie.objects.all())
+    movies = serializers.PrimaryKeyRelatedField(many=True, queryset=Movie.objects.all())
 
     class Meta:
         model = User
