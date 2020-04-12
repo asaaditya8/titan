@@ -13,6 +13,10 @@ source env/bin/activate
 pip install django
 pip install djangorestframework
 
+# Setup database
+python manage.py migrate
+python manage.py createsuperuser
+
 # Run API Server
 python manage.py runserver
 ```
@@ -21,6 +25,8 @@ python manage.py runserver
 ```bash
 # Users can be added by the administrator only
 # Authentication is Basic i.e. username and password.
+# For example here, username is 'usera'.
+# And password is 'thisthisthis'.
 
 # To retreive list of movies add by user
 $ curl -X GET http://127.0.0.1:8000/movies/ -u usera:thisthisthis
