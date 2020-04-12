@@ -6,7 +6,8 @@ from .models import Movie
 class MoviesSerializer(serializers.ModelSerializer):
     class Meta:
         model = Movie
-        fields = '__all__'
+        owner = serializers.ReadOnlyField(source='owner.username')
+        fields = ['id', 'title', 'date']
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -14,4 +15,4 @@ class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ['id', 'username', 'snippets']
+        fields = ['id', 'username', 'movies']
